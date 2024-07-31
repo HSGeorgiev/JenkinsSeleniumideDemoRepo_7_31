@@ -9,7 +9,7 @@ pipeline {
             }
         }
 
-        tage ("Set uo .Net core") {
+        stage ("Set uo .Net core") {
             // Set uo .Net core
             steps {
                 bat '''
@@ -44,7 +44,7 @@ pipeline {
     }
 
     post {
-        alwais {
+        always {
             archiveArtifacts artifacts: '**/Testresults/*.trx', allowEmptyArchive: true
             step([
                 $class: 'MSTestPublisher', 
