@@ -43,7 +43,7 @@ pipeline {
     post {
         always {
             archiveArtifacts artifacts: '**/TestResults/*.trx', allowEmptyArchive: true
-            testResulFile '**/TestResults/*.trx'
+            junit '**/TestResults/*.trx'
         }
     }
 }
