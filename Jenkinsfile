@@ -18,16 +18,6 @@ pipeline {
             }
         }
 
-        stage('Uninstall Current Chrome') {
-            steps {
-                bat '''
-                echo Uninstalling current Google Chrome
-                choco uninstall googlechrome -y
-                '''
-            }
-        }
-
-
         stage('Restore dependencies') {
             steps {
                 // Restore dependencies using the solution file
